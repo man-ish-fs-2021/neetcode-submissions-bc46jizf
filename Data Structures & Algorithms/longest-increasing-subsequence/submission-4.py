@@ -1,7 +1,7 @@
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         n = len(nums)
-        dp = [[0 for i in range(2)]for i in range(n+1)]
+        dp = [[0 for i in range(2)]for j in range(n+1)]
 
         for i in range(n-1, -1, -1):
             including = 1
@@ -13,3 +13,5 @@ class Solution:
             overall = max(including, excluding)
             dp[i][1] = overall
         return dp[0][1]
+
+        
